@@ -4,6 +4,18 @@ layout: landing
 
 # 🏎 Formula 1 'Hybrid Era' Analysis
 
+<figure><img src=".gitbook/assets/JPG-RGB-F1_70_Number_HotRed_Standard_RGB-1024x302.jpg" alt=""><figcaption></figcaption></figure>
+
+### About the Dataset
+
+#### Context
+
+Formula 1 (a.k.a. F1 or Formula One) is the highest class of single-seater auto racing sanctioned by the Fédération Internationale de l'Automobile (FIA) and owned by the Formula One Group. The FIA Formula One World Championship has been one of the premier forms of racing around the world since its inaugural season in 1950. The word "formula" in the name refers to the set of rules to which all participants' cars must conform. A Formula One season consists of a series of races, known as Grands Prix, which take place worldwide on purpose-built circuits and on public roads.
+
+#### Content
+
+The dataset consists of all information on the Formula 1 races, drivers, constructors, qualifying, circuits, lap times, pit stops, championships from 1950 till the latest 2021 season.
+
 ## What is the Hybird Era?
 
 ### 2014-2021
@@ -34,13 +46,3 @@ However, mostly due to no engine supplier applying for F1 entry in 2021 and 2022
 Use of the Ergast API is completely free, but you are welcome to [contribute to the annual running costs](https://liberapay.com/ergast). Any contributions above the actual costs will be donated to the [Grand Prix Trust](https://www.grandprixtrust.com/).
 
 <figure><img src="https://liberapay.com/assets/widgets/donate.svg" alt=""><figcaption></figcaption></figure>
-
-### About the Dataset
-
-#### Context
-
-Formula 1 (a.k.a. F1 or Formula One) is the highest class of single-seater auto racing sanctioned by the Fédération Internationale de l'Automobile (FIA) and owned by the Formula One Group. The FIA Formula One World Championship has been one of the premier forms of racing around the world since its inaugural season in 1950. The word "formula" in the name refers to the set of rules to which all participants' cars must conform. A Formula One season consists of a series of races, known as Grands Prix, which take place worldwide on purpose-built circuits and on public roads.
-
-#### Content
-
-The dataset consists of all information on the Formula 1 races, drivers, constructors, qualifying, circuits, lap times, pit stops, championships from 1950 till the latest 2021 season.
