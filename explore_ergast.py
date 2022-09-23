@@ -7,6 +7,12 @@ from pyergast import pyergast
 
 """
 Basic Queries
+
+For most queries, passing no var gives just latest results:
+    for instance 'pyergast.driver_standings()' would give the current standings
+
+Everything returned from pyergast is in a pandas dataframe format, so we should
+be able to work with the as such. 
 """
 
 # DATAFRAME OF ALL DRIVERS
@@ -16,6 +22,8 @@ all_drivers_df = pyergast.get_drivers()
 all_cons_df = pyergast.get_constructors()
 
 # DATAFRAME OF ALL RACE RESULTS
+# This seems to provied us with some really good information
+# We should def dive deeper into this df
 race_results_df = pyergast.get_race_result()
 
 # DATAFRAME OF ALL QUALI RESULTS
@@ -43,3 +51,5 @@ j_alesi_snap = pyergast.query_driver('alesi')
 
 # SNAPSHOT OF JORDAN F1 TEAM
 jordan_snap = pyergast.query_constructor('jordan')
+
+print(race_results_df)
