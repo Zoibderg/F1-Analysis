@@ -130,3 +130,6 @@ dmypy.json
 
 # Jovian
 .jovianrc
+
+Mac
+.DS_Store
