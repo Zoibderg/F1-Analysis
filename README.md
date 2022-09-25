@@ -1,6 +1,6 @@
 # 🏎 Formula 1 'Hybrid Era' Analysis
 
-<figure><img src=".gitbook/assets/JPG-RGB-F1_70_Number_HotRed_Standard_RGB-1024x302.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="notebook_source/JPG-RGB-F1_70_Number_HotRed_Standard_RGB-1024x302.jpg" alt=""><figcaption></figcaption></figure>
 
 ### About the Dataset
 
@@ -16,7 +16,7 @@ The dataset consists of all information on the Formula 1 races, drivers, constru
 
 ### 2014-2021
 
-The year 2014 ushered in the most significant rule changes in F1 history, with normally aspirated, 2.4-liter V8 engines replaced by new, 1.6-liter turbocharged V6 “power units” (no longer officially called engines) integrated with complex, hybrid energy recovery systems (ERS) that FIA claimed “gave the sport a much cleaner and greener image more relevant to developing road car technologies.”&#x20;
+The year 2014 ushered in the most significant rule changes in F1 history, with normally aspirated, 2.4-liter V8 engines replaced by new, 1.6-liter turbocharged V6 “power units” (no longer officially called engines) integrated with complex, hybrid energy recovery systems (ERS) that FIA claimed “gave the sport a much cleaner and greener image more relevant to developing road car technologies.”
 
 The new formula allows turbocharged engines, which last appeared in 1988. These have their efficiency improved through turbo-compounding by recovering energy from exhaust gases. The original proposal for four-cylinder turbocharged engines was not welcomed by the racing teams, in particular Ferrari. A compromise was reached, allowing V6 forced induction engines instead. The engines rarely exceed 12,000 rpm during qualifying and race, due to the new fuel flow restrictions.
 
@@ -26,7 +26,7 @@ The 2015 season was an improvement on 2014, adding about 30–50 hp (20–40 kW)
 
 ### 2022
 
-In 2017, the FIA began negotiations with existing constructors and potential new manufacturers over the next generation of engines with a projected introduction date of 2021 but delayed to 2022 due to the effects of the COVID-19 pandemic. The initial proposal was designed to simplify engine designs, cut costs, promote new entries and address criticisms directed at the 2014 generation of engines. It called for the 1.6 L V6 configuration to be retained, but abandoned the complex Motor Generator Unit–Heat (MGU-H) system. The Motor Generator Unit–Kinetic (MGU-K) would be more powerful, with a greater emphasis on driver deployment and a more flexible introduction to allow for tactical use.&#x20;
+In 2017, the FIA began negotiations with existing constructors and potential new manufacturers over the next generation of engines with a projected introduction date of 2021 but delayed to 2022 due to the effects of the COVID-19 pandemic. The initial proposal was designed to simplify engine designs, cut costs, promote new entries and address criticisms directed at the 2014 generation of engines. It called for the 1.6 L V6 configuration to be retained, but abandoned the complex Motor Generator Unit–Heat (MGU-H) system. The Motor Generator Unit–Kinetic (MGU-K) would be more powerful, with a greater emphasis on driver deployment and a more flexible introduction to allow for tactical use.
 
 The proposal also called for the introduction of standardised components and design parameters to make components produced by all manufacturers compatible with one another in a system dubbed "plug in and play". A further proposal to allow four-wheel drive cars was also made, with the front axle driven by an MGU-K unit—as opposed to the traditional driveshaft—that functioned independently of the MGU-K providing power to the rear axle, mirroring the system developed by Porsche for the 919 Hybrid race car.
 
@@ -34,11 +34,33 @@ However, mostly due to no engine supplier applying for F1 entry in 2021 and 2022
 
 ## Resources:
 
-* [**pyErgast**](https://github.com/weiranyu/pyErgast)**:** Python pandas wrapper for the [Ergast F1 API](http://ergast.com/mrd/). This package allows easy access to the Ergast API for anyone wishing to conduct analysis on Formula 1 data.
+* ~~\*\*\*~~[~~**pyErgast**~~](https://github.com/weiranyu/pyErgast)~~**:** Python pandas wrapper for the~~ [~~Ergast F1 API~~](http://ergast.com/mrd/)~~. This package allows easy access to the Ergast API for anyone wishing to conduct analysis on Formula 1 data.~~&#x20;
+  * _(After further exploration of other package options; FastF1 is a much better option for working with the data, it also provides us with much more information)._&#x20;
+* [**FastF1**](https://theoehrly.github.io/Fast-F1/index.html): FastF1 gives you access to F1 lap timing, car telemetry and position, tyre data, weather data, the event schedule and session results. The module is designed around Pandas, Numpy and Matplotlib. This makes it easy to use while offering lots of possibilities for data analysis and visualization. FastF1 handles big chunks of data (\~50-100mb per session) so most of the information is stored locally as cached requests (be aware).
+  *   All data is downloaded from two sources:
+
+      > * The official f1 data stream -> [f1-live](https://www.formula1.com/en/f1-live.html)
+      > * Ergast web api -> [ergast.com](http://ergast.com/mrd/)
+  * Timing data, car telemetry and position data is available for the 2018 and later seasons. Schedule information and session results are available for older seasons too. (limited to [Ergast web api](http://ergast.com/mrd/)).
+  * FastF1 is unofficial software and in no way associated with the Formula 1 group of companies.
 * [**Ergast API**](http://ergast.com/mrd/)**:** The Ergast Developer API is an experimental [web service](http://en.wikipedia.org/wiki/Web\_service) which provides a historical record of motor racing data for non-commercial purposes. Please read the [terms and conditions of use](http://ergast.com/mrd/terms). The API provides data for the [Formula One](http://en.wikipedia.org/wiki/Formula\_One)series, from the beginning of the world championships in 1950.
 
-#### &#x20;                                                                                          Usage
+#### Usage
 
 Use of the Ergast API is completely free, but you are welcome to [contribute to the annual running costs](https://liberapay.com/ergast). Any contributions above the actual costs will be donated to the [Grand Prix Trust](https://www.grandprixtrust.com/).
 
 <figure><img src="https://liberapay.com/assets/widgets/donate.svg" alt=""><figcaption></figcaption></figure>
+
+### Licenses
+
+#### FastF1
+
+MIT License
+
+Copyright (c) 2022 theOehrly
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
