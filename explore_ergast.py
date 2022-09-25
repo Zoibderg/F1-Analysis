@@ -52,4 +52,4 @@ j_alesi_snap = pyergast.query_driver('alesi')
 # SNAPSHOT OF JORDAN F1 TEAM
 jordan_snap = pyergast.query_constructor('jordan')
 
-print(race_results_df)
+pyergast.
