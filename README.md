@@ -44,10 +44,7 @@ However, mostly due to no engine supplier applying for F1 entry in 2021 and 2022
   * Timing data, car telemetry and position data is available for the 2018 and later seasons. Schedule information and session results are available for older seasons too. (limited to [Ergast web api](http://ergast.com/mrd/)).
   * FastF1 is unofficial software and in no way associated with the Formula 1 group of companies.
 * [**Ergast API**](http://ergast.com/mrd/)**:** The Ergast Developer API is an experimental [web service](http://en.wikipedia.org/wiki/Web\_service) which provides a historical record of motor racing data for non-commercial purposes. Please read the [terms and conditions of use](http://ergast.com/mrd/terms). The API provides data for the [Formula One](http://en.wikipedia.org/wiki/Formula\_One)series, from the beginning of the world championships in 1950.
-
-#### Usage
-
-Use of the Ergast API is completely free, but you are welcome to [contribute to the annual running costs](https://liberapay.com/ergast). Any contributions above the actual costs will be donated to the [Grand Prix Trust](https://www.grandprixtrust.com/).
+  * Use of the Ergast API is completely free, but you are welcome to [contribute to the annual running costs](https://liberapay.com/ergast). Any contributions above the actual costs will be donated to the [Grand Prix Trust](https://www.grandprixtrust.com/).
 
 <figure><img src="https://liberapay.com/assets/widgets/donate.svg" alt=""><figcaption></figcaption></figure>
 
