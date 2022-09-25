@@ -32,7 +32,7 @@ The proposal also called for the introduction of standardised components and des
 
 However, mostly due to no engine supplier applying for F1 entry in 2021 and 2022, abolishment of the MGU-H, a more powerful MGU-K and a four-wheel drive system were all shelved with the possibility of their re-introduction for 2026. Instead, the teams and FIA agreed to a radical change in body/chassis aerodynamics to promote more battles on the course at closer distances to each other. They further agreed to an increase in alcohol content from 5.75% to 10% of fuel, and to implement a freeze on power unit design for 2022-2025, with the ICE, turbocharger and MGU-H being frozen on March 1st and the energy store, MGU-K and control electronics being frozen on September 1st during the 2022 season. Honda, the outgoing engine supplier in 2021, was keen to keep the MGU-H, and Red Bull, who took over the engine production project, backed that opinion. The 4WD system was planned to be based on Porsche 919 Hybrid system, but Porsche ended up not becoming an F1 engine supplier for 2021-2022.
 
-## Resources:
+## Resources
 
 * ~~\*\*\*~~[~~**pyErgast**~~](https://github.com/weiranyu/pyErgast)~~**:** Python pandas wrapper for the~~ [~~Ergast F1 API~~](http://ergast.com/mrd/)~~. This package allows easy access to the Ergast API for anyone wishing to conduct analysis on Formula 1 data.~~&#x20;
   * _(After further exploration of other package options; FastF1 is a much better option for working with the data, it also provides us with much more information)._&#x20;
@@ -45,8 +45,6 @@ However, mostly due to no engine supplier applying for F1 entry in 2021 and 2022
   * FastF1 is unofficial software and in no way associated with the Formula 1 group of companies.
 * [**Ergast API**](http://ergast.com/mrd/)**:** The Ergast Developer API is an experimental [web service](http://en.wikipedia.org/wiki/Web\_service) which provides a historical record of motor racing data for non-commercial purposes. Please read the [terms and conditions of use](http://ergast.com/mrd/terms). The API provides data for the [Formula One](http://en.wikipedia.org/wiki/Formula\_One)series, from the beginning of the world championships in 1950.
   * Use of the Ergast API is completely free, but you are welcome to [contribute to the annual running costs](https://liberapay.com/ergast). Any contributions above the actual costs will be donated to the [Grand Prix Trust](https://www.grandprixtrust.com/).
-
-<figure><img src="https://liberapay.com/assets/widgets/donate.svg" alt=""><figcaption></figcaption></figure>
 
 ### Licenses
 
