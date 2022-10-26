@@ -36,27 +36,28 @@ ax.set_ylabel("Lap Time")
 # plt.show()
 
 # SHOW 2022 RACES, INCLUDING TESTING
-events = fastf1.get_event_schedule(2022)
+events = fastf1.get_event_schedule(2022, include_testing=False)
 print(events)
 
-eventnames = []
-winners22 = {}
-for event in events['OfficialEventName']:
-    eventname = str(event)
-    eventnames.append(eventname)
 
-for name in eventnames:
-    gp = fastf1.get_session(2022, name, 'R')
-    gp.load()
-    result = gp.results
-    print(result)
-    try:
-        winner = result['BroadcastName'].iloc[0]
-        winners22[name] = winner
-    except Exception:
-        winners22[name] = 'TBD'
+# eventnames = []
+# winners22 = {}
+# for event in events['OfficialEventName']:
+#     eventname = str(event)
+#     eventnames.append(eventname)
 
-pprint.pprint(winners22)
+# for name in eventnames:
+#     gp = fastf1.get_session(2022, name, 'R')
+#     gp.load()
+#     result = gp.results
+#     print(result)
+#     try:
+#         winner = result['BroadcastName'].iloc[0]
+#         winners22[name] = winner
+#     except Exception:
+#         winners22[name] = 'TBD'
+
+# pprint.pprint(winners22)
 
 # FOR EACH EVENT, SHOW THE RACE RESULTS
 
