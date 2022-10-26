@@ -3,14 +3,16 @@ This file is for exploring fastf1 package. It seems to offer us more options in 
 of exploring and managing the data from the ergast API.
 """
 
-"""
-This is pretty advanced and there is a LOT that can be done. I will want to
-keep exploring deeper to get more comfortable with this package. 
-"""
 
+
+from unittest import result
+import matplotlib.pyplot as plt
+import pandas as pd
+import pprint
+from timple.timedelta import strftimedelta
 import fastf1
-from fastf1 import plotting
-from matplotlib import pyplot as plt
+import fastf1.plotting as plotting
+from fastf1.core import Laps
 
 
 # GITHUB EXAMPLE
@@ -34,10 +36,35 @@ ax.set_ylabel("Lap Time")
 # plt.show()
 
 # SHOW 2022 RACES, INCLUDING TESTING
-event = fastf1.get_event_schedule(2022)
-#print(event)
+events = fastf1.get_event_schedule(2022)
+print(events)
 
-miami_gp = fastf1.get_session(2022, 'Miami', 'R')
-miami_gp.load()
-results = miami_gp.results   # this is a pandas dataframe
-print(results)
+eventnames = []
+winners22 = {}
+for event in events['OfficialEventName']:
+    eventname = str(event)
+    eventnames.append(eventname)
+
+for name in eventnames:
+    gp = fastf1.get_session(2022, name, 'R')
+    gp.load()
+    result = gp.results
+    print(result)
+    try:
+        winner = result['BroadcastName'].iloc[0]
+        winners22[name] = winner
+    except Exception:
+        winners22[name] = 'TBD'
+
+pprint.pprint(winners22)
+
+# FOR EACH EVENT, SHOW THE RACE RESULTS
+
+
+# miami_gp = fastf1.get_session(2022, 'Miami', 'R')
+# miami_gp.load()
+# results = miami_gp.results   # this is a pandas dataframe
+# print(results)
+
+# # SHOW ALL COLUMNS IN RESULTS
+# print(results.columns)

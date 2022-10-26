@@ -131,5 +131,8 @@ dmypy.json
 # Jovian
 .jovianrc
 
-Mac
+# Mac
 .DS_Store
+
+# FastF1
+cache/
