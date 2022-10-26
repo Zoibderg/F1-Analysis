@@ -41,6 +41,9 @@ events = fastf1.get_event_schedule(2022, include_testing=False)
 
 winners22 = {}
 
+# SETUP EVENTNAMES AND ATTACH ROUND NUMBERS
+# CURRENT THE ROUND NUMBER IS BEING DIRECTY ATTCHE TO THE EVENT NAME STRING
+# THIS IS NOT IDEAL, BUT IT WORKS FOR NOW
 eventnames = [f"Round.{round}: \
 -- {events[events['RoundNumber'] == round]['Location'].values[0]} -- \
 {events[events['RoundNumber'] == round]['OfficialEventName'].values[0]}" 
@@ -48,7 +51,9 @@ for round in events['RoundNumber']]
 
 # print(eventnames)
 
-
+"""
+Pull all GP winners for the 2022 season
+"""
 # GRAB WINNERS
 for name in eventnames:
     gp = fastf1.get_session(2022, name, 'R')
@@ -59,7 +64,7 @@ for name in eventnames:
         winner = result['BroadcastName'].iloc[0]
         winners22[name] = winner
     except Exception:
-        winners22[name] = 'TBD'
+        winners22[name] = 'TBD'  # if no winner, set to TBD
 
 print(f"\nFORMULA 1 2022 GP WINNERS")
 print("----------------------------")
