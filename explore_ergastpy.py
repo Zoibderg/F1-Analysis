@@ -18,7 +18,7 @@ from fastf1.core import Laps
 # GITHUB EXAMPLE
 plotting.setup_mpl()
 
-fastf1.Cache.enable_cache('./F1_HE_Analysis/cache')  # optional but recommended
+fastf1.Cache.enable_cache('./cache')  # optional but recommended
 
 race = fastf1.get_session(2020, 'Turkish Grand Prix', 'R')
 race.load()
