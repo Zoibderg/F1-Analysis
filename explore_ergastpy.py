@@ -13,63 +13,36 @@ import fastf1
 import fastf1.plotting as plotting
 from fastf1.core import Laps
 
+class Data:
+    def __init__(self):
+        fastf1.Cache.enable_cache('./cache')  # optional but recommended
+        self.winners22 = {}
+        self.events = fastf1.get_event_schedule(2022, include_testing=False)
+        self.eventnames = [f"Round.{round}: \
+-- {self.events[self.events['RoundNumber'] == round]['Location'].values[0]} -- \
+{self.events[self.events['RoundNumber'] == round]['OfficialEventName'].values[0]}" 
+for round in self.events['RoundNumber']]
 
-# GITHUB EXAMPLE
-plotting.setup_mpl()
+    def get_gp_winners(self):
+        # GRAB WINNERS
+        for name in self.eventnames:
+            gp = fastf1.get_session(2022, name, 'R')
+            gp.load()
+            result = gp.results
+            # print(result)
+            try:
+                winner = result['BroadcastName'].iloc[0]
+                self.winners22[name] = winner
+            except Exception:
+                self.winners22[name] = 'TBD'  # if no winner, set to TBD
 
-fastf1.Cache.enable_cache('./cache')  # optional but recommended
-
-# race = fastf1.get_session(2020, 'Turkish Grand Prix', 'R')
-# race.load()
-
-# lec = race.laps.pick_driver('LEC')
-# ham = race.laps.pick_driver('HAM')
-
-# # PLOTTING DATA
-# fig, ax = plt.subplots()
-# ax.plot(lec['LapNumber'], lec['LapTime'], color='red')
-# ax.plot(ham['LapNumber'], ham['LapTime'], color='cyan')
-# ax.set_title("LEC vs HAM")
-# ax.set_xlabel("Lap Number")
-# ax.set_ylabel("Lap Time")
-# plt.show()
-
-# SHOW 2022 RACES, EXCLUDING TESTING
-events = fastf1.get_event_schedule(2022, include_testing=False)
-# print(events)
-
-
-winners22 = {}
-
-# SETUP EVENTNAMES AND ATTACH ROUND NUMBERS
-# CURRENT THE ROUND NUMBER IS BEING DIRECTY ATTCHE TO THE EVENT NAME STRING
-# THIS IS NOT IDEAL, BUT IT WORKS FOR NOW
-eventnames = [f"Round.{round}: \
--- {events[events['RoundNumber'] == round]['Location'].values[0]} -- \
-{events[events['RoundNumber'] == round]['OfficialEventName'].values[0]}" 
-for round in events['RoundNumber']]
-
-# print(eventnames)
-
-"""
-Pull all GP winners for the 2022 season
-"""
-# GRAB WINNERS
-for name in eventnames:
-    gp = fastf1.get_session(2022, name, 'R')
-    gp.load()
-    result = gp.results
-    # print(result)
-    try:
-        winner = result['BroadcastName'].iloc[0]
-        winners22[name] = winner
-    except Exception:
-        winners22[name] = 'TBD'  # if no winner, set to TBD
+data = Data()
+data.get_gp_winners()
 
 print(f"\nFORMULA 1 2022 GP WINNERS")
 print("----------------------------")
-for entry in winners22:
-    print(f"\n{entry.title()} : {winners22[entry]}")
+for entry in data.winners22:
+    print(f"\n{entry.title()} : {data.winners22[entry]}")
     print(f"\n-----------------------------")
 
 
