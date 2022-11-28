@@ -141,3 +141,7 @@ cache/
 # JetBrains
 .idea/
 *.iml
+
+# VSCode
+.vscode/
+.vscode/settings.json
